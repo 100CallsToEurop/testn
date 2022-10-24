@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  data:
+    build: ./
+    container_name: data
+    command: node dist/main
+    restart: unless-stopped
+    ports:
+      - "8095:8095"
+    env_file:
+      - .development.env
+  
+    
